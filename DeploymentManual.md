@@ -127,11 +127,14 @@
                     tags: bhuwan405/sample-node-dev:${{ github.run_number }}
  
             
-11. Pushed it to github
-    
+11. Pushed Dockerfile and workflow file to github
+    a. Command:
+        git add .
+        git commit -m "Updated for workflow - ci.yaml file"
+        git push
 
 
-
+12. 
 
 
 
