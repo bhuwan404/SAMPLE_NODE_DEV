@@ -26,3 +26,4 @@ jobs:
           context: .
           push: true
           tags: bhuwan405/sample_node_dev:${{ github.run_number }}
+          
