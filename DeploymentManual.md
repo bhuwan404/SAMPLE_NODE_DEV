@@ -132,9 +132,42 @@
         git commit -m "Updated for workflow - ci.yaml file"
         git push
 
-12. 
+12. Created docker-compose file in EC2 instance
+    a. docker-compose
+        version: '3.8'
 
+        services:
+        app:
+            container_name: sample-node
+            image: docker.io/bhuwan405/sample_node_dev:6
+            ports:
+            - "80:3000"
+            environment:
+            - NODE_ENV=development
+            - HOST=0.0.0.0
+            - PORT=3000
+            - POSTGRES_DB_CONNECTION_URL=postgresql://test:test123@172.31.89.82:5432/test_db
 
+13. Started docker-compose file
+    a. Command:
+        docker-compose up
+
+14. Swagger api is accessible in EC2 instance public ip and on 80 port
+    a. Curl command output:
+        curl -X 'POST'   'http://3.86.90.217:80/auth/login'   -H 'accept: application/json'   -H 'Content-Type: application/json'   -d '{
+            "email": "dev.noveltytechnology.co",
+            "password": "random"
+        }'
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <title>Error</title>
+        </head>
+        <body>
+        <pre>Cannot POST /auth/login</pre>
+        </body>
+        </html>
 
 
 
